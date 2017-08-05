@@ -1,0 +1,45 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using EDA1.M1.DataStructures;
+
+namespace EDA1.UnitTests
+{
+    [TestClass]
+    public class StackTests
+    {
+        [TestMethod]
+        public void TestElementCount()
+        {
+            Stack stack = new Stack(3);
+            Assert.AreEqual(true, stack.IsEmpty());
+            Assert.AreEqual(false, stack.IsFull());
+
+            stack.Push(1);
+            Assert.AreEqual(false, stack.IsEmpty());
+            Assert.AreEqual(false, stack.IsFull());
+
+            stack.Push(2);
+            stack.Push(3);
+            Assert.AreEqual(false, stack.IsEmpty());
+            Assert.AreEqual(true, stack.IsFull());
+        }
+
+        [TestMethod]
+        public void TestPushPop()
+        {
+            Stack stack = new Stack(4);
+            stack.Push(1);
+
+            Assert.AreEqual(1, stack.Pop());
+
+            stack.Push(2);
+            Assert.AreEqual(2, stack.Top());
+
+            stack.Push(3);
+            Assert.AreEqual(3, stack.Top());
+
+            Assert.AreEqual(3, stack.Pop());
+            Assert.AreEqual(2, stack.Pop());
+        }
+    }
+}
