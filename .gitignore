@@ -31,6 +31,9 @@ bld/
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
+# Code Coverage Results
+*[Cc]overage.xml
+
 # NUNIT
 *.VisualState.xml
 TestResult.xml
