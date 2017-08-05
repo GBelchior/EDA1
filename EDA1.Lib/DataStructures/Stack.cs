@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EDA1.M1.DataStructures
+namespace EDA1.Lib.DataStructures
 {
     /// <summary>
     /// FIFO Data Structure

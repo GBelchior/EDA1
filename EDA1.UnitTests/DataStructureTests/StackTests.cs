@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EDA1.M1.DataStructures;
+using EDA1.Lib.DataStructures;
 
 namespace EDA1.UnitTests
 {
