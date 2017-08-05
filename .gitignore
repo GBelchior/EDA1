@@ -33,6 +33,7 @@ bld/
 
 # Code Coverage Results
 *[Cc]overage.xml
+[Oo]pen[Cc]over/
 
 # NUNIT
 *.VisualState.xml

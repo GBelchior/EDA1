@@ -1,5 +1,9 @@
 image: Visual Studio 2015
 
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: Gt19d1L3Fw+kECiterHgd1SSJE2Ui/sowNLWPEL8Cl4fLhmqZ6pTXLq1lRw7DFUX
+
 before_build:
   - nuget restore
   - choco install opencover.portable
@@ -11,4 +15,7 @@ build:
 
 test_script:
   - OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" -targetargs:"/testcontainer:.\EDA1.UnitTests\bin\Debug\EDA1.UnitTests.dll" -filter:"+[*]* -[EDA1.UnitTests*]*" -output:".\MyProject_coverage.xml"
+  
+after_test:
   - codecov -f "MyProject_coverage.xml"
+  - cmd: packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover MyProject_coverage.xml -r %COVERALLS_REPO_TOKEN%
