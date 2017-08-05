@@ -17,5 +17,5 @@ test_script:
   - OpenCover.Console.exe -register:user -target:"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" -targetargs:"/testcontainer:.\EDA1.UnitTests\bin\Debug\EDA1.UnitTests.dll" -filter:"+[*]* -[EDA1.UnitTests*]*" -output:".\MyProject_coverage.xml"
   
 after_test:
+  - cmd: packages\coveralls.net.0.7.0\tools\csmacnz.coveralls.exe --opencover -i MyProject_coverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths
   - codecov -f "MyProject_coverage.xml"
-  - cmd: packages/coveralls.net.0.7.0/tools/csmacnz.coveralls.exe --opencover -i MyProject_coverage.xml --repoToken $env:COVERALLS_REPO_TOKEN --useRelativePaths
