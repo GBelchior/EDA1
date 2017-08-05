@@ -7,8 +7,8 @@
     <ProjectGuid>{1D3BBF5B-7C75-4CB7-BBBF-5C9FEEC30ABD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EDA1.M1</RootNamespace>
-    <AssemblyName>EDA1.M1</AssemblyName>
+    <RootNamespace>EDA1.Lib</RootNamespace>
+    <AssemblyName>EDA1.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
