@@ -9,7 +9,7 @@ build:
   verbosity: minimal
 test_script:
 - ps: >-
-    vstest.console.exe /inIsolation /Enablecodecoverage .\EDA1.UnitTests\bin\Debug\EDA1.UnitTests.dll
+    vstest.console.exe /inIsolation /Enablecodecoverage /Settings:CodeCoverage.runsettings .\EDA1.UnitTests\bin\Debug\EDA1.UnitTests.dll
 
 
     $coverageFilePath = Resolve-Path -path "TestResults\*\*.coverage"
