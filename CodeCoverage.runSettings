@@ -9,7 +9,7 @@
 
             <ModulePaths>
               <Exclude>
-                <ModulePath>.*UnitTests.*</ModulePath>
+                <ModulePath>.*tests.dll</ModulePath>
               </Exclude>
             </ModulePaths>
 
