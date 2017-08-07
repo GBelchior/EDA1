@@ -41,5 +41,22 @@ namespace EDA1.UnitTests
             Assert.AreEqual(3, stack.Pop());
             Assert.AreEqual(2, stack.Pop());
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException), "The stack has no items")]
+        public void TestPopEmptyStack()
+        {
+            Stack stack = new Stack(3);
+            stack.Pop();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException), "The stack is full")]
+        public void TestPushFullStack()
+        {
+            Stack stack = new Stack(1);
+            stack.Push("test");
+            stack.Push("test2");
+        }
     }
 }
