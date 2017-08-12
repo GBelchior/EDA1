@@ -1,11 +1,12 @@
-﻿using System;
+﻿using EDA1.Interfaces;
+using System;
 
 namespace EDA1.Lib.DataStructures
 {
     /// <summary>
     /// FIFO Data Structure
     /// </summary>
-    public class Stack
+    public class Stack : IStack
     {
         private object[] FStack;
         private int FIdxTop;

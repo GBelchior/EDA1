@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.Lib", "EDA1.Lib\EDA1.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.UnitTests", "EDA1.UnitTests\EDA1.UnitTests.csproj", "{F3F10FC9-B90E-4D2A-8ADF-A1244BC01F6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.Calculadora", "..\..\..\Desktop\ExCalculadora\Calculadora\EDA1.Calculadora.csproj", "{DB646F81-1824-4F75-ADA8-D43CD323DA74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.Interfaces", "EDA1.Interfaces\EDA1.Interfaces.csproj", "{B0BD502E-9F97-4637-AACB-4E7CC76A3F77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F3F10FC9-B90E-4D2A-8ADF-A1244BC01F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3F10FC9-B90E-4D2A-8ADF-A1244BC01F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3F10FC9-B90E-4D2A-8ADF-A1244BC01F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BD502E-9F97-4637-AACB-4E7CC76A3F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BD502E-9F97-4637-AACB-4E7CC76A3F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BD502E-9F97-4637-AACB-4E7CC76A3F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BD502E-9F97-4637-AACB-4E7CC76A3F77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
