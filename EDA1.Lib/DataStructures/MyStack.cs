@@ -1,14 +1,13 @@
-﻿using EDA1.Interfaces;
-using System;
+﻿using System;
 
 namespace EDA1.Lib.DataStructures
 {
     /// <summary>
     /// FIFO Data Structure
     /// </summary>
-    public class Stack : IStack
+    public class MyStack<T>
     {
-        private object[] FStack;
+        private T[] FStack;
         private int FIdxTop;
         private int FQtdMaxItems;
 
@@ -16,9 +15,9 @@ namespace EDA1.Lib.DataStructures
         /// Initializes a new stack data structure
         /// </summary>
         /// <param name="max">Maximum elements that the stack can hold</param>
-        public Stack(int max)
+        public MyStack(int max)
         {
-            FStack = new object[max];
+            FStack = new T[max];
             FQtdMaxItems = max;
             FIdxTop = 0;
         }
@@ -45,9 +44,9 @@ namespace EDA1.Lib.DataStructures
         /// Inserts an element at the top of the stack
         /// </summary>
         /// <param name="item">The element to be inserted</param>
-        public void Push(object item)
+        public void Push(T item)
         {
-            if (IsFull()) throw new InvalidOperationException("The stack is full");
+            if (IsFull()) throw new StackOverflowException("The stack is full");
             FStack[FIdxTop++] = item;
         }
 
@@ -55,7 +54,7 @@ namespace EDA1.Lib.DataStructures
         /// Removes the top element of the stack
         /// </summary>
         /// <returns>The removed element</returns>
-        public object Pop()
+        public T Pop()
         {
             if (IsEmpty()) throw new InvalidOperationException("The stack has no items");
             return FStack[--FIdxTop];
@@ -65,9 +64,14 @@ namespace EDA1.Lib.DataStructures
         /// Returns the top element of the stack without removing it
         /// </summary>
         /// <returns>The top element of the stack</returns>
-        public object Top()
+        public T Top()
         {
             return FStack[FIdxTop-1];
+        }
+
+        public static implicit operator MyStack<T>(MyStack<char> v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
