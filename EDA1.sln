@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.UnitTests", "EDA1.Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.Calculadora", "EDA1.Calculadora\EDA1.Calculadora.csproj", "{DB646F81-1824-4F75-ADA8-D43CD323DA74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.MiniPaint", "EDA1.MiniPaint\EDA1.MiniPaint.csproj", "{54660AB0-CBB3-4F82-A45C-7700E255C5E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB646F81-1824-4F75-ADA8-D43CD323DA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54660AB0-CBB3-4F82-A45C-7700E255C5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54660AB0-CBB3-4F82-A45C-7700E255C5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54660AB0-CBB3-4F82-A45C-7700E255C5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54660AB0-CBB3-4F82-A45C-7700E255C5E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
