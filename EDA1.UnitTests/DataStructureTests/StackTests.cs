@@ -10,7 +10,7 @@ namespace EDA1.UnitTests
         [TestMethod]
         public void TestElementCount()
         {
-            Stack stack = new Stack(3);
+            MyStack<int> stack = new MyStack<int>(3);
             Assert.AreEqual(true, stack.IsEmpty());
             Assert.AreEqual(false, stack.IsFull());
 
@@ -27,7 +27,7 @@ namespace EDA1.UnitTests
         [TestMethod]
         public void TestPushPop()
         {
-            Stack stack = new Stack(4);
+            MyStack<int> stack = new MyStack<int>(4);
             stack.Push(1);
 
             Assert.AreEqual(1, stack.Pop());
@@ -46,15 +46,15 @@ namespace EDA1.UnitTests
         [ExpectedException(typeof(InvalidOperationException), "The stack has no items")]
         public void TestPopEmptyStack()
         {
-            Stack stack = new Stack(3);
+            MyStack<int> stack = new MyStack<int>(3);
             stack.Pop();
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException), "The stack is full")]
+        [ExpectedException(typeof(StackOverflowException), "The stack is full")]
         public void TestPushFullStack()
         {
-            Stack stack = new Stack(1);
+            MyStack<string> stack = new MyStack<string>(1);
             stack.Push("test");
             stack.Push("test2");
         }
