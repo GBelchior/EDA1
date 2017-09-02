@@ -24,15 +24,37 @@ namespace Paint
             Fila f = new Fila(b.Size.Width * b.Size.Height);
             Color LOriginalColor = b.GetPixel(x, y);
             int LNumPixels = 0;
+
+            if (LOriginalColor == C1) return 0;
+
             f.Insert(new Point(x, y));
 
             while (!f.Empty())
             {
                 Point p = (Point)f.Remove();
-                if (b.GetPixel(p.X - 1, p.Y) == LOriginalColor) f.Insert(new Point(p.X - 1, p.Y));
-                if (b.GetPixel(p.X + 1, p.Y) == LOriginalColor) f.Insert(new Point(p.X + 1, p.Y));
-                if (b.GetPixel(p.X, p.Y - 1) == LOriginalColor) f.Insert(new Point(p.X, p.Y - 1));
-                if (b.GetPixel(p.X, p.Y + 1) == LOriginalColor) f.Insert(new Point(p.X, p.Y + 1));
+                if (p.X - 1 >= 0 && b.GetPixel(p.X - 1, p.Y) == LOriginalColor)
+                {
+                    b.SetPixel(p.X - 1, p.Y, C1);
+                    f.Insert(new Point(p.X - 1, p.Y));
+                }
+
+                if (p.X + 1 < b.Size.Width && b.GetPixel(p.X + 1, p.Y) == LOriginalColor)
+                {
+                    b.SetPixel(p.X + 1, p.Y, C1);
+                    f.Insert(new Point(p.X + 1, p.Y));
+                }
+
+                if (p.Y - 1 >= 0 && b.GetPixel(p.X, p.Y - 1) == LOriginalColor)
+                {
+                    b.SetPixel(p.X, p.Y - 1, C1);
+                    f.Insert(new Point(p.X, p.Y - 1));
+                }
+
+                if (p.Y + 1 < b.Size.Height && b.GetPixel(p.X, p.Y + 1) == LOriginalColor)
+                {
+                    b.SetPixel(p.X, p.Y + 1, C1);
+                    f.Insert(new Point(p.X, p.Y + 1));
+                }
 
                 b.SetPixel(p.X, p.Y, C1);
                 LNumPixels++;

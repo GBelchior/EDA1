@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -54,6 +55,7 @@
     <Compile Include="DataStructureTests\StackTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TesteCalc.cs" />
+    <Compile Include="TestesColorir.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EDA1.Calculadora\EDA1.Calculadora.csproj">
@@ -63,6 +65,10 @@
     <ProjectReference Include="..\EDA1.Lib\EDA1.Lib.csproj">
       <Project>{1d3bbf5b-7c75-4cb7-bbbf-5c9feec30abd}</Project>
       <Name>EDA1.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EDA1.MiniPaint\EDA1.MiniPaint.csproj">
+      <Project>{54660ab0-cbb3-4f82-a45c-7700e255c5e8}</Project>
+      <Name>EDA1.MiniPaint</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

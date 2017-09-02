@@ -28,7 +28,10 @@ namespace Paint
         public void Insert(object x)
         {
             if (Full()) throw new StackOverflowException("Fila Cheia");
-            rear = (rear == size - 1) ? 0 : rear + 1;
+            //rear = (rear == size - 1) ? 0 : rear + 1;
+            if (rear == size - 1) rear = 0;
+            else rear++;
+
             elements[rear] = x;
             count++;
         }
@@ -36,10 +39,12 @@ namespace Paint
         public object Remove()
         {
             if (Empty()) throw new InvalidOperationException("Fila Vazia");
-            front = (front == size - 1) ? 0 : front + 1;
+            //front = (front == size - 1) ? 0 : front + 1;
+            if (front == size - 1) front = 0;
+            else front++;
+
             count--;
             return elements[front];
         }
-
     }
 }
