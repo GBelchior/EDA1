@@ -44,12 +44,20 @@ namespace Editor
         // Excluindo uma linha - é passada a posição da linha començando em zero
         public void RemoveLine(int position)
         {
+            string texto = (string)listaTexto[position].Info;
             listaTexto.RemoveAt(position);
+
+            if (position - 1 >= 0)
+            {
+                listaTexto[position-1].Info = ((string)listaTexto[position-1].Info) + texto;
+            }
         }
 
         public void DeleteLine(int position)
         {
-            listaTexto.RemoveAt(position);
+            string texto = (string)listaTexto[position + 1].Info;
+            listaTexto.RemoveAt(position+1);
+            listaTexto[position].Info = ((string)listaTexto[position].Info) + texto;
         }
 
     }
