@@ -20,6 +20,24 @@ namespace Editor
             get { return count; }
         }
 
+        public Node this[int index]
+        {
+            get
+            {
+                if (index > count) throw new OverflowException("Invalid index");
+
+                Node n = list;
+                int curPos = 0;
+
+                while (n.Next != null && curPos++ != index)
+                {
+                    n = n.Next;
+                }
+
+                return n;
+            }
+        }
+
         // Construtor
         public ListaDupla()
         {
@@ -30,7 +48,7 @@ namespace Editor
         // Se está vazia
         public bool Empty()
         {
-            return (count==0);
+            return (count == 0);
         }
 
         // Insere um novo nó
@@ -40,6 +58,8 @@ namespace Editor
             else if (p == list) InsertBeginning(x);
             else if (p == listEnd) InsertEnd(x);
             else InsertAfter(p, x);
+
+            count++;
         }
 
         private void InsertEmpty(object x)
@@ -47,9 +67,11 @@ namespace Editor
             Node n = new Node() { Info = x };
             list = n;
             listEnd = n;
+
+            count++;
         }
 
-        private void InsertBeginning(object x)
+        public void InsertBeginning(object x)
         {
             Node n = new Node() { Info = x };
             Node y = list;
@@ -57,9 +79,22 @@ namespace Editor
             n.Next = y;
             y.Prior = n;
             list = n;
+
+            count++;
         }
 
-        private void InsertAfter(Node p, object x)
+        public void InsertAt(int position, object x)
+        {
+            if (position == -1)
+            {
+                InsertEmpty(x);
+                return;
+            }
+
+            InsertAfter(this[position], x);
+        }
+
+        public void InsertAfter(Node p, object x)
         {
             Node n = new Node() { Info = x };
             n.Prior = p;
@@ -67,29 +102,33 @@ namespace Editor
             p.Next = n;
 
             if (p == listEnd) listEnd = n;
+
+            count++;
         }
 
-        private void InsertEnd(object x)
+        public void InsertEnd(object x)
         {
             Node n = new Node() { Info = x };
             n.Prior = listEnd;
             listEnd.Next = n;
             listEnd = n;
+
+            count++;
         }
 
         // Remove um nó
+        public void RemoveAt(int position)
+        {
+            Remove(this[position]);
+        }
+
         public void Remove(Node p)
         {
-            object x;
-            Node q, r;
-            if (p == null)
-                throw new InvalidOperationException("Renovação vazia");
-            x = p.Info;
-            q = p.Prior;
-            r = p.Next;
-            q.Next = r;
-            r.Prior = q;
-            p = null;
+            if (p == null) throw new InvalidOperationException("Renovação vazia");
+            if (p.Prior != null) p.Prior.Next = p.Next;
+            if (p.Next != null) p.Next.Prior = p.Prior;
+
+            count--;
         }
     }
 

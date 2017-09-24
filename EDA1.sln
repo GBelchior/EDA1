@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.Lib", "EDA1.Lib\EDA1.Lib.csproj", "{1D3BBF5B-7C75-4CB7-BBBF-5C9FEEC30ABD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.UnitTests", "EDA1.UnitTests\EDA1.UnitTests.csproj", "{F3F10FC9-B90E-4D2A-8ADF-A1244BC01F6A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4831B40D-80CC-469A-9F58-D6CBEAE3742F} = {4831B40D-80CC-469A-9F58-D6CBEAE3742F}
+		{DB646F81-1824-4F75-ADA8-D43CD323DA74} = {DB646F81-1824-4F75-ADA8-D43CD323DA74}
+		{54660AB0-CBB3-4F82-A45C-7700E255C5E8} = {54660AB0-CBB3-4F82-A45C-7700E255C5E8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA1.Calculadora", "EDA1.Calculadora\EDA1.Calculadora.csproj", "{DB646F81-1824-4F75-ADA8-D43CD323DA74}"
 EndProject

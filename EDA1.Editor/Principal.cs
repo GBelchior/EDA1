@@ -7,59 +7,59 @@ using System.Data;
 
 namespace Editor
 {
-	/// <summary>
-	/// Summary description for Form1.
-	/// </summary>
-	public class frmPrincipal : System.Windows.Forms.Form
-	{
+    /// <summary>
+    /// Summary description for Form1.
+    /// </summary>
+    public class frmPrincipal : System.Windows.Forms.Form
+    {
         private bool saveText;
         private Text Texto;
         private System.Windows.Forms.GroupBox gbTexto;
         private TextBox [] caixaTexto = null;
         private Panel pTexto;
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.Container components = null;
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.Container components = null;
 
-		public frmPrincipal()
-		{
-			//
-			// Required for Windows Form Designer support
-			//
-			InitializeComponent();
+        public frmPrincipal()
+        {
+            //
+            // Required for Windows Form Designer support
+            //
+            InitializeComponent();
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-			Texto = new Text();
+            //
+            // TODO: Add any constructor code after InitializeComponent call
+            //
+            Texto = new Text();
             Texto.InsertLine("", -1);
             saveText = true;
             DrawText();
-		}
+        }
 
-		/// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose( bool disposing )
-		{
-			if( disposing )
-			{
-				if (components != null) 
-				{
-					components.Dispose();
-				}
-			}
-			base.Dispose( disposing );
-		}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose( bool disposing )
+        {
+            if( disposing )
+            {
+                if (components != null) 
+                {
+                    components.Dispose();
+                }
+            }
+            base.Dispose( disposing );
+        }
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+        #region Windows Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.gbTexto = new System.Windows.Forms.GroupBox();
             this.pTexto = new System.Windows.Forms.Panel();
             this.gbTexto.SuspendLayout();
@@ -80,6 +80,7 @@ namespace Editor
             // 
             this.pTexto.AutoScroll = true;
             this.pTexto.AutoSize = true;
+            this.pTexto.BackColor = System.Drawing.SystemColors.Control;
             this.pTexto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pTexto.Location = new System.Drawing.Point(3, 16);
             this.pTexto.Name = "pTexto";
@@ -99,33 +100,33 @@ namespace Editor
             this.gbTexto.PerformLayout();
             this.ResumeLayout(false);
 
-		}
-		#endregion
+        }
+        #endregion
 
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main() 
-		{
-			Application.Run(new frmPrincipal());
-		}
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main() 
+        {
+            Application.Run(new frmPrincipal());
+        }
 
-		private void Form1_Load(object sender, System.EventArgs e)
-		{
-		
-		}
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+        
+        }
 
-		// Função responsável por atualizar o texto na tela
-		private void DrawText()
-		{
-			caixaTexto = new TextBox[Texto.NumLines];
+        // Função responsável por atualizar o texto na tela
+        private void DrawText()
+        {
+            caixaTexto = new TextBox[Texto.NumLines];
             
             Node n = Texto.FirstLine;
             int i=0;
             pTexto.Controls.Clear();
-			while (n!=null)
-			{
+            while (n!=null)
+            {
                 caixaTexto[i] = new TextBox();
                 caixaTexto[i].Text = Convert.ToString(n.Info);
                 caixaTexto[i].Left = 20;
@@ -140,10 +141,10 @@ namespace Editor
                 
                 pTexto.Controls.Add(caixaTexto[i]);
 
-				n = n.Next;
+                n = n.Next;
                 i++;
-			}
-		}
+            }
+        }
 
         private void txtTexto_KeyDown(object sender, KeyEventArgs e)
         {
@@ -237,5 +238,5 @@ namespace Editor
 
         }
 
-	}
+    }
 }

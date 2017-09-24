@@ -28,25 +28,28 @@ namespace Editor
 
         // Nova linha: o valor -1 indica que o elemento deve ser 
         // inserido na primeira posição
-        // Outros valores indicam a posição após a qual o novo elmento será
-        // inserido, ininciando em 0
+        // Outros valores indicam a posição após a qual o novo elemento será
+        // inserido, iniciando em 0
         public void InsertLine(string text, int position)
         {
+            listaTexto.InsertAt(position, text);
         }
 
         // Iniciando em 0, a posição da linha que deve ser alterada
         public void ChangeLine(string text, int position)
         {
+            listaTexto[position].Info = text;
         }
 
         // Excluindo uma linha - é passada a posição da linha començando em zero
         public void RemoveLine(int position)
         {
+            listaTexto.RemoveAt(position);
         }
 
         public void DeleteLine(int position)
         {
-            // Implementar!
+            listaTexto.RemoveAt(position);
         }
 
     }
