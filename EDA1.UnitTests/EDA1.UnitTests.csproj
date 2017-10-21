@@ -57,6 +57,7 @@
     <Compile Include="TesteCalc.cs" />
     <Compile Include="TesteEditor.cs" />
     <Compile Include="TestesColorir.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EDA1.Calculadora\EDA1.Calculadora.csproj">
